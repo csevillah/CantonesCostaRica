@@ -97,11 +97,12 @@
 	       "Mapbox":mbox,  
 	       "Hydda Full":Hydda_Full,
 	       "Topo Map":OpenTopoMap,
-	       "Map Surfer Roads":OpenMapSurfer_Roads	       
+	       "Map Surfer Roads":OpenMapSurfer_Roads,
+	       "SNIT - Limite Provincial":wmsLayer
       };
       var overlays = {
-	    "Cantones de CR": poblaCanton,
-	    "SNIT - Limite Provincial":wmsLayer
+	    "Cantones de CR": poblaCanton
+	    
       };
       L.control.layers(baseLayers, overlays).addTo(mapa);
 	    
