@@ -25,6 +25,10 @@
 
     <script>
       var mapa = L.map('map').setView([9.7, -84], 8);
+      var wmsLayer = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
+	layers:'limiteprovincial_5k'      
+	}).addTo(mapa);
+	    
       var osm  = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
       });
