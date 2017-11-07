@@ -53,9 +53,13 @@
 	      
 });
       osm.addTo(mapa);
-  var wmsLayer = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
+  var wmsSnitLP = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
 	layers:'limiteprovincial_5k'      
 	}).addTo(mapa);
+	    
+     var wmsSnitC5 = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
+	layers:'curvas_5000'      
+	}).addTo(mapa);    
 	    
       // retorna un color con base en la cantidad de especies
       function color(d) {
@@ -98,7 +102,9 @@
 	       "Hydda Full":Hydda_Full,
 	       "Topo Map":OpenTopoMap,
 	       "Map Surfer Roads":OpenMapSurfer_Roads,
-	       "SNIT - Limite Provincial":wmsLayer
+	       "SNIT - Limite Provincial":wmsSnitLP,
+	       "SNIT - Curvas 5000":wmsSnitC5 
+	      
       };
       var overlays = {
 	    "Cantones de CR": poblaCanton
