@@ -60,6 +60,10 @@
      var wmsSnitC5 = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
 	layers:'vias_5000'      
 	}).addTo(mapa);    
+
+var wmsLayer = L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
+    layers: 'maps:dark'
+}).addTo(mapa);
 	    
       // retorna un color con base en la cantidad de especies
       function color(d) {
@@ -103,7 +107,8 @@
 	       "Topo Map":OpenTopoMap,
 	       "Map Surfer Roads":OpenMapSurfer_Roads,
 	       "SNIT - Limite Provincial":wmsSnitLP,
-	       "SNIT - Vías 5000":wmsSnitC5 
+	       "SNIT - Vías 5000":wmsSnitC5,
+	       "Leaflet":wmsLayer
 	      
       };
       var overlays = {
