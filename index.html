@@ -53,7 +53,8 @@
 	      
 });
       osm.addTo(mapa);
-  var wmsSnitLP = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
+     // Servicios WMS
+     var wmsSnitLP = L.tileLayer.wms('http://geos.snitcr.go.cr/be/IGN_5/wms?', {
 	layers:'limiteprovincial_5k'      
 	}).addTo(mapa);
 	    
@@ -61,9 +62,9 @@
 	layers:'vias_5000'      
 	}).addTo(mapa);    
 
-var wmsLayer = L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
-    layers: 'maps:dark'
-}).addTo(mapa);
+     var wmsLeafletMD = L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
+        layers: 'maps:dark'
+     }).addTo(mapa);
 	    
       // retorna un color con base en la cantidad de especies
       function color(d) {
@@ -108,7 +109,7 @@ var wmsLayer = L.tileLayer.wms('https://demo.boundlessgeo.com/geoserver/ows?', {
 	       "Map Surfer Roads":OpenMapSurfer_Roads,
 	       "SNIT - Limite Provincial":wmsSnitLP,
 	       "SNIT - Vías 5000":wmsSnitC5,
-	       "Leaflet":wmsLayer
+	       "Leaflet Map Dark":wmsLeafletMD
 	      
       };
       var overlays = {
